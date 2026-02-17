@@ -53,7 +53,7 @@ export default function Construct() {
       "/models/construct.glb",
       (gltf) => {
         const model = gltf.scene;
-        model.scale.set(1, 1, 1); // 2x bigger
+        model.scale.set(0.9, 0.9, 0.9); // 2x bigger
 
         scene.add(model);
 
