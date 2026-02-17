@@ -25,8 +25,8 @@ const Hero = () => {
   useLayoutEffect(() => {
 
   const ctx = gsap.context(() => {
-    const tl = gsap.timeline({ delay: 0.5 });
-    const tl2 = gsap.timeline({ delay: 0.5 });
+    const tl = gsap.timeline({ delay: 0.3 });
+    const tl2 = gsap.timeline({ delay: 0.3 });
 
     // Left side animation
     const split = new SplitText(leftText.current, { type: "words" });

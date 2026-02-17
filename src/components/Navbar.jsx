@@ -1,6 +1,38 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useLayoutEffect } from 'react';
+import gsap from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Navbar = () => {
+  const linksArray = useRef(null);
+  const contactButton = useRef(null);
+
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline({ delay: 0.5 });
+
+      tl.from(linksArray.current.children, {
+        opacity: 0,
+        y: -20,
+        duration: 0.5,
+        ease: "power3.out",
+        stagger: 0.1,
+        yoyo: true,
+        repeat: 2,
+        repeatDelay: 0.15
+      });
+
+      tl.to(contactButton.current, {
+        opacity: 1,
+        duration: 0.5,
+        ease: "power3.out"
+      }, "-=0.3");
+    }, linksArray);
+
+    return () => ctx.revert();
+  }, [])
+
   const [isOpen, setIsOpen] = useState(false);
   const [activeNav, setActiveNav] = useState('home');
 
@@ -31,13 +63,13 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <div className="flex items-center space-x-6">
+            <div ref={linksArray} className="flex items-center space-x-6 will-change-transform">
               {navItems.map((item) => (
                 <a
                   key={item.id}
                   href={`#${item.id}`}
                   onClick={() => setActiveNav(item.id)}
-                  className={`relative text-sm font-medium transition-colors duration-300 ${
+                  className={`relative text-sm font-medium will-change-transform transition-colors duration-300 ${
                     activeNav === item.id
                       ? 'text-emerald-300'
                       : 'text-gray-300 hover:text-emerald-300'
@@ -51,7 +83,7 @@ const Navbar = () => {
               ))}
             </div>
             
-            <button className="px-6 py-2 bg-gradient-to-r from-emerald-600 to-cyan-600 text-white font-medium rounded-full hover:shadow-lg hover:shadow-emerald-500/30 transition-all duration-300">
+            <button ref={contactButton} className="opacity-0 px-6 py-2 bg-gradient-to-r from-emerald-600 to-cyan-600 text-white font-medium rounded-full hover:shadow-lg hover:shadow-emerald-500/30 transition-all duration-300">
               Let's Talk
             </button>
           </div>

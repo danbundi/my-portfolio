@@ -1,1 +1,5 @@
 @import "tailwindcss";
+
+.word {
+  display: inline-block;
+}
