@@ -5,6 +5,7 @@ import Navbar from './components/Navbar'
 // import Home from './components/Home'
 import About from './pages/ImageSwapSection'
 import Skills from './pages/Skills'
+import Projects from './pages/Projects'
 import Nothing from './pages/Nothing'
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
       <Hero />
       <About />
       <Skills/>
+      <Projects/>
       <Nothing/>
     </>
   )
