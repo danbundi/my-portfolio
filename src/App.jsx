@@ -6,6 +6,7 @@ import Navbar from './components/Navbar'
 import About from './pages/ImageSwapSection'
 import Skills from './pages/Skills'
 import Projects from './pages/Projects'
+import Contact from './pages/Contact'
 import Nothing from './pages/Nothing'
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
       <About />
       <Skills/>
       <Projects/>
+      <Contact/>
       <Nothing/>
     </>
   )
