@@ -84,7 +84,7 @@ const Navbar = () => {
             </div>
             
             <button ref={contactButton} className="opacity-0 px-6 py-2 bg-gradient-to-r from-emerald-600 to-cyan-600 text-white font-medium rounded-full hover:shadow-lg hover:shadow-emerald-500/30 transition-all duration-300">
-              Let's Talk
+              <a href="https://wa.me/254705155010" target='_blank' rel="noopener noreferrer">Let's Talk</a>
             </button>
           </div>
 

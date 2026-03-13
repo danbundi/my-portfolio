@@ -248,7 +248,7 @@ const Hero = () => {
       </div>
       
       <button ref={buttonRef} className="group opacity-0 relative px-8 py-3 bg-gradient-to-r from-[#123524] to-cyan-600  font-semibold text-white overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-emerald-600/30">
-        <span className="relative z-10">View My Projects.</span>
+        <a href="#projects"><span className="relative z-10">View My Projects.</span></a>
         <div className="absolute inset-0 bg-gradient-to-r from-emerald-500 to-cyan-500 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
       </button>
     </div>

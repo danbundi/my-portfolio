@@ -59,7 +59,7 @@ const Projects = () => {
   }, []);
 
   return (
-    <section className="w-full min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 flex flex-col justify-center overflow-hidden py-8 md:py-0">
+    <section id="projects" className="w-full min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 flex flex-col justify-center overflow-hidden py-8 md:py-0">
       
       <div className="text-center mb-6 md:mb-10 z-10 px-4">
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white">Featured Projects</h2>
@@ -113,7 +113,7 @@ const Projects = () => {
                 </div>
 
                 <a 
-                  href={project.link || '#'}
+                  href={project.live || '#'}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1 md:gap-2 px-3 md:px-4 py-1.5 md:py-2 bg-emerald-600 hover:bg-emerald-700 text-white text-sm md:text-base rounded-lg transition-colors duration-300"

@@ -11,37 +11,37 @@ const contacts = [
   {
     name: "WhatsApp",
     icon: <FaWhatsapp />,
-    link: "https://wa.me/254700000000",
+    link: "https://wa.me/254705155010",
     color: "from-green-400 to-green-600",
   },
   {
     name: "GitHub",
     icon: <FaGithub />,
-    link: "https://github.com/yourusername",
+    link: "https://github.com/danbundi",
     color: "from-gray-500 to-gray-700",
   },
   {
     name: "Instagram",
     icon: <FaInstagram />,
-    link: "https://instagram.com/yourusername",
+    link: "https://www.instagram.com/_dienbi_/",
     color: "from-pink-500 to-purple-500",
   },
   {
     name: "LinkedIn",
     icon: <FaLinkedin />,
-    link: "https://linkedin.com/in/yourusername",
+    link: "https://www.linkedin.com/in/daniel-bundi/",
     color: "from-blue-400 to-blue-600",
   },
   {
     name: "Call",
     icon: <HiOutlinePhone />,
-    link: "tel:+254700000000",
+    link: "tel:+254705155010",
     color: "from-emerald-400 to-cyan-400",
   },
   {
     name: "Email",
     icon: <HiOutlineMail />,
-    link: "mailto:youremail@example.com",
+    link: "mailto:danielbundi24@gmail.com",
     color: "from-purple-400 to-indigo-400",
   },
 ];
@@ -159,6 +159,7 @@ const Contact = () => {
     <section
       ref={containerRef}
       className="w-full min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 flex flex-col justify-center items-center px-4 md:px-6 py-16 md:py-24 relative overflow-hidden"
+      id="contact"
     >
       {/* Animated background particles */}
       <div className="absolute inset-0 overflow-hidden">

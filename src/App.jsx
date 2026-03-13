@@ -18,7 +18,6 @@ function App() {
       <Skills/>
       <Projects/>
       <Contact/>
-      <Nothing/>
     </>
   )
 }

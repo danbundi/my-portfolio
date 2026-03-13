@@ -3,40 +3,24 @@
     "title": "Bacteriophage Genome Analyzer",
     "description": "A bioinformatics platform that retrieves genomes from NCBI and analyzes antimicrobial resistance.",
     "tech": ["React", "Node.js", "NCBI API", "Bioinformatics"],
-    "video": "/videos/video.mp4",
+    "video": "/videos/bacteriophage.mp4",
     "live": "https://example.com",
-    "github": "https://github.com/example/phage"
+    "github": "https://bacteriophage.jhubafrica.com/"
   },
   {
     "title": "Academic Streaming Platform",
     "description": "A platform for structured semester-based academic video content with M-Pesa payments.",
     "tech": ["React", "Node.js", "MongoDB", "M-Pesa API"],
-    "video": "/videos/video.mp4",
-    "live": "https://example.com",
+    "video": "/videos/guardianstay.mp4",
+    "live": "https://guardianstay.vercel.app/",
     "github": "https://github.com/example/stream"
   },
   {
-    "title": "Mini E-Commerce Store",
+    "title": "Chumbi Place Mini E-Commerce",
     "description": "A modern e-commerce store with product browsing, orders, blogs and M-Pesa checkout.",
     "tech": ["Vite", "React", "Express", "MongoDB"],
-    "video": "../assets/video.mp4",
-    "live": "https://example.com",
-    "github": "https://github.com/example/store"
-  },
-  {
-    "title": "Academic Streaming Platform",
-    "description": "A platform for structured semester-based academic video content with M-Pesa payments.",
-    "tech": ["React", "Node.js", "MongoDB", "M-Pesa API"],
-    "video": "/videos/stream.mp4",
-    "live": "https://example.com",
-    "github": "https://github.com/example/stream"
-  },
-  {
-    "title": "Mini E-Commerce Store",
-    "description": "A modern e-commerce store with product browsing, orders, blogs and M-Pesa checkout.",
-    "tech": ["Vite", "React", "Express", "MongoDB"],
-    "video": "/videos/store.mp4",
-    "live": "https://example.com",
+    "video": "/videos/chumbipalace.mp4",
+    "live": "https://chumbipalace.vercel.app/",
     "github": "https://github.com/example/store"
   }
 ]
