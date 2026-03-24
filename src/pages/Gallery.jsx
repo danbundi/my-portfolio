@@ -13,63 +13,76 @@ import img9 from "../assets/gallery/peppermint.png"
 import img10 from "../assets/gallery/bodybutter.png"
 import img11 from "../assets/gallery/guardian.png"
 
-const initialImages = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11];
+const initialImages = [
+  img1, img2, img3, img4, img5,
+  img6, img7, img8, img9, img10, img11
+];
 
 const Gallery = () => {
   const gridRef = useRef(null);
+  const isAnimating = useRef(false);
 
   const getRandomImages = (arr, count) => {
-    const shuffled = [...arr].sort(() => 0.5 - Math.random());
-    return shuffled.slice(0, count);
-    };
+    const copy = [...arr];
+    const result = [];
 
-    const [images, setImages] = useState(() =>
-        getRandomImages(initialImages, 10)
-        );
+    while (result.length < count && copy.length > 0) {
+      const index = Math.floor(Math.random() * copy.length);
+      result.push(copy.splice(index, 1)[0]);
+    }
 
-  // Shuffle function
-  const shuffleArray = (arr) => {
-    return [...arr].sort(() => Math.random() - 0.5);
+    return result;
   };
 
+  const [images, setImages] = useState(() =>
+    getRandomImages(initialImages, 10)
+  );
+
   useEffect(() => {
-  const interval = setInterval(() => {
+    const interval = setInterval(() => {
+      if (isAnimating.current) return;
+      isAnimating.current = true;
 
-    const newImages = getRandomImages(initialImages, 10);
+      const newImages = getRandomImages(initialImages, 10);
 
-    // Animate out
-    gsap.to(".gallery-item", {
-      scale: 0.8,
-      opacity: 0.5,
-      duration: 0.3,
-      stagger: 0.025,
-      onComplete: () => {
+      const items = gridRef.current?.querySelectorAll(".gallery-item");
 
-        setImages(newImages);
+      gsap.to(items, {
+        scale: 0.85,
+        opacity: 0.4,
+        duration: 0.25,
+        stagger: 0.02,
+        onComplete: () => {
+          setImages(newImages);
 
-        // Animate in
-        gsap.fromTo(
-          ".gallery-item",
-          { scale: 0.8, opacity: 0 },
-          {
-            scale: 1,
-            opacity: 1,
-            duration: 0.3,
-            stagger: 0.025,
-            ease: "power3.out",
-          }
-        );
-      },
-    });
+          requestAnimationFrame(() => {
+            const newItems = gridRef.current?.querySelectorAll(".gallery-item");
 
-  }, 2000);
+            gsap.fromTo(
+              newItems,
+              { scale: 0.85, opacity: 0 },
+              {
+                scale: 1,
+                opacity: 1,
+                duration: 0.4,
+                stagger: 0.03,
+                ease: "power3.out",
+                onComplete: () => {
+                  isAnimating.current = false;
+                },
+              }
+            );
+          });
+        },
+      });
+    }, 2500);
 
-  return () => clearInterval(interval);
-}, []);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
-    <section  id="gallery" className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 px-6 py-20">
-      
+    <section id="gallery" className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 px-6 py-20">
+
       {/* Title */}
       <div className="text-center mb-16">
         <h2 className="text-5xl font-bold text-white">
@@ -88,21 +101,19 @@ const Gallery = () => {
         ref={gridRef}
         className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-7xl mx-auto"
       >
-        {images.map((img, index) => (
+        {images.map((img) => (
           <div
-            key={index}
+            key={img}
             className="gallery-item relative overflow-hidden rounded-xl group cursor-pointer"
           >
             <img
-                src={img}
-                alt="poster"
-                className="w-[200px] h-[200px] object-cover transition-transform duration-500 group-hover:scale-110"
-                />
+              src={img}
+              alt="poster"
+              className="w-[200px] h-[200px] object-cover transition-transform duration-500 group-hover:scale-110"
+            />
 
-            {/* Overlay */}
             <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition"></div>
 
-            {/* Glow border */}
             <div className="absolute inset-0 border border-transparent group-hover:border-emerald-400/40 rounded-xl transition"></div>
           </div>
         ))}
