@@ -8,6 +8,7 @@ import Skills from './pages/Skills'
 import Projects from './pages/Projects'
 import Contact from './pages/Contact'
 import Nothing from './pages/Nothing'
+import Gallery from './pages/Gallery'
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <About />
       <Skills/>
       <Projects/>
+      <Gallery/>
       <Contact/>
     </>
   )
