@@ -1,15 +1,15 @@
 [
   {
-    "title": "Bacteriophage Genome Analyzer",
-    "description": "A bioinformatics platform that retrieves genomes from NCBI and analyzes antimicrobial resistance.",
-    "tech": ["React", "Node.js", "NCBI API", "Bioinformatics"],
-    "video": "/videos/bacteriophage.mp4",
-    "live": "https://example.com",
-    "github": "https://bacteriophage.jhubafrica.com/"
+    "title": "MySideQuest — The Sidequest Platform",
+  "description": "A community-driven platform where people post and discover real-world sidequests, collaborate on ideas, and turn small goals into shared adventures.",
+  "tech": ["React", "Node.js", "MongoDB", "PWA"],
+    "video": "/videos/mysidequest.mp4",
+    "live": "https://mysidequest.vercel.app/",
+    "github": ""
   },
   {
-    "title": "Academic Streaming Platform",
-    "description": "A platform for structured semester-based academic video content with M-Pesa payments.",
+    "title": "GuardianStay — Trusted Help for Everyday Living",
+    "description": "A platform that connects households with reliable service providers for home errands, cleaning, caregiving, and daily assistance — making home management simple and stress-free.",
     "tech": ["React", "Node.js", "MongoDB", "M-Pesa API"],
     "video": "/videos/guardianstay.mp4",
     "live": "https://guardianstay.vercel.app/",
